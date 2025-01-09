@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MARS6-turbo TTS Demo</title>
+
+  <!-- GOOGLE FONTS -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+
+  <!-- BOOTSTRAP -->
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+
+  <!-- NORMALIZE -->
+  <link rel="stylesheet" href="css/normalize.css" />
+
+  <!-- SKELETON -->
+  <link rel="stylesheet" href="css/skeleton.css" />
+
+  <!-- CUSTOM -->
+  <link rel="stylesheet" href="css/custom.css" />
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <strong>MARS6-turbo</strong>
+      </a>
+    </div>
+  </nav>
+
+  <div class="container mb-5">
+    <header class="text-center mb-5">
+      <h1 class="display-4 fw-bold" style="margin-bottom:0.5em;">MARS6-turbo</h1>
+      <p class="lead">
+        <strong>A Small and Robust Hierarchical-Codec Text-to-Speech Model</strong><br>
+        <a href="https://github.com/Camb-ai/mars6-turbo/" target="_blank" rel="noopener noreferrer">Code</a> | 
+        <a href="https://camb-ai.github.io/mars6-turbo/" target="_blank" rel="noopener noreferrer">Paper</a>
+      </p>
+      <hr>
+    </header>
+
+    <!-- Abstract section -->
+    <section class="mb-5">
+      <h2 class="mb-3">Abstract</h2>
+      <p class="fs-5">
+        Codec-based text-to-speech (TTS) models have shown
+        impressive quality with zero-shot voice cloning abilities. However,
+        they often struggle with more expressive references or complex text
+        inputs. We present <strong>MARS6</strong>, a robust encoder-decoder transformer
+        for rapid, expressive TTS. <strong>MARS6</strong> is built on recent improvements
+        in spoken language modelling. Utilizing a hierarchical setup for its
+        decoder, new speech tokens are processed at a rate of only 12 Hz,
+        enabling efficient modelling of long-form text while retaining
+        reconstruction quality. We combine several recent training and
+        inference techniques to reduce repetitive generation and improve
+        output stability and quality. This enables the 70M-parameter
+        <strong>MARS6</strong> to achieve similar performance to models many times
+        larger. We show this in objective and subjective evaluations,
+        comparing TTS output quality and reference speaker cloning
+        ability.
+      </p>
+    </section>
+
+    <!-- Quick content list -->
+    <section class="mb-5">
+      <h2 class="mb-3">Contents</h2>
+      <ul class="fs-5">
+        <li><a href="#model-overview">Model Overview</a></li>
+        <li><a href="#audio-showcase">Audio Showcase</a></li>
+      </ul>
+    </section>
+
+    <!-- Model Overview -->
+    <section id="model-overview" class="mb-5">
+      <h2 class="mb-3">Model Overview</h2>
+      <div class="text-center mb-4">
+        <img src="pics/mars6_diagram.svg" alt="MARS6 Model Overview" class="img-fluid" 
+             style="border:1px solid #ccc;max-width:600px;">
+        <p class="mt-2 text-muted">MARS6 hierarchical TTS architecture.</p>
+      </div>
+      <p class="fs-5">
+        MARS6 is an encoder-decoder transformer. The encoder converts
+        a speaker embedding and sequence of text embeddings to latent vectors for
+        cross-attention in the global decoder. The hierarchical autoregressive decoder
+        has two parts: The global decoder produces new latent vectors at a low sample
+        rate, where each vector is autoregressively decoded to acoustic tokens using a
+        smaller local decoder model. The entire patch of acoustic tokens then forms
+        the next input vector to the global decoder through a patch embedding.
+      </p>
+    </section>
+
+    <!-- Audio Showcase -->
+    <section id="audio-showcase" class="mb-5">
+      <h2 class="mb-4">Audio Showcase</h2>
+      <p class="fs-5">
+        Below are reference speech samples paired with MARS6-turbo (70M) outputs (Deep clone vs. Shallow clone) and other baselines 
+        (MetaVoice-1B, StyleTTS2, XTTSv2). Each sample includes transcripts for the reference and the target 
+        generation text. Samples are selected from the EARS test set to represent wide variation in references.
+      </p>
+
+      <!-- Where JS will insert the samples -->
+      <div id="demo-section"></div>
+    </section>
+
+  </div><!-- /.container -->
+
+  <!-- Footer -->
+  <footer class="py-3 bg-light">
+    <div class="container text-center">
+      <hr>
+      <p class="mb-0">&copy; 2025 MARS6-turbo TTS Demo. <a href="https://camb.ai" target="_blank" rel="noopener">Camb.ai</a></p>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="js/main.js"></script>
+</body>
+</html>
