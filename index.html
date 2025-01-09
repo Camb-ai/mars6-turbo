@@ -32,19 +32,25 @@
 
   <div class="container mb-5">
     <header class="text-center mb-5">
-      <h1 class="display-4 fw-bold" style="margin-bottom:0.5em;">MARS6-turbo</h1>
-      <p class="lead">
-        <strong>A Small and Robust Hierarchical-Codec Text-to-Speech Model</strong><br>
-        <a href="https://github.com/Camb-ai/mars6-turbo/" target="_blank" rel="noopener noreferrer">Code</a> | 
-        <a href="https://camb-ai.github.io/mars6-turbo/" target="_blank" rel="noopener noreferrer">Paper</a>
+      <h1 class="display-3 fw-bold" style="margin-bottom:0.2em;">MARS6-turbo</h1>
+      <h2 class="h3 text-muted mb-3">A Small and Robust Hierarchical-Codec TTS Model <br>(IEEE - ICASSP 2025)</h2>
+    
+      <p class="fs-3">
+        <a href="https://github.com/Camb-ai/mars6-turbo/" target="_blank" rel="noopener noreferrer" class="me-3">
+          <strong>Code</strong>
+        </a>
+        <a href="https://camb-ai.github.io/mars6-turbo/" target="_blank" rel="noopener noreferrer">
+          <strong>Paper</strong>
+        </a>
       </p>
+    
       <hr>
     </header>
 
     <!-- Abstract section -->
     <section class="mb-5">
       <h2 class="mb-3">Abstract</h2>
-      <p class="fs-5">
+      <p class="fs-4">
         Codec-based text-to-speech (TTS) models have shown
         impressive quality with zero-shot voice cloning abilities. However,
         they often struggle with more expressive references or complex text
@@ -66,7 +72,7 @@
     <!-- Quick content list -->
     <section class="mb-5">
       <h2 class="mb-3">Contents</h2>
-      <ul class="fs-5">
+      <ul class="fs-4">
         <li><a href="#model-overview">Model Overview</a></li>
         <li><a href="#audio-showcase">Audio Showcase</a></li>
       </ul>
@@ -76,11 +82,13 @@
     <section id="model-overview" class="mb-5">
       <h2 class="mb-3">Model Overview</h2>
       <div class="text-center mb-4">
-        <img src="pics/mars6_diagram.svg" alt="MARS6 Model Overview" class="img-fluid" 
-             style="border:1px solid #ccc;max-width:600px;">
+        <img src="pics/mars6_diagram.svg" 
+             alt="MARS6 Model Overview" 
+             class="img-fluid w-100" 
+             style="border:1px solid #ccc;">
         <p class="mt-2 text-muted">MARS6 hierarchical TTS architecture.</p>
       </div>
-      <p class="fs-5">
+      <p class="fs-4">
         MARS6 is an encoder-decoder transformer. The encoder converts
         a speaker embedding and sequence of text embeddings to latent vectors for
         cross-attention in the global decoder. The hierarchical autoregressive decoder
@@ -94,7 +102,7 @@
     <!-- Audio Showcase -->
     <section id="audio-showcase" class="mb-5">
       <h2 class="mb-4">Audio Showcase</h2>
-      <p class="fs-5">
+      <p class="fs-4">
         Below are reference speech samples paired with MARS6-turbo (70M) outputs (Deep clone vs. Shallow clone) and other baselines 
         (MetaVoice-1B, StyleTTS2, XTTSv2). Each sample includes transcripts for the reference and the target 
         generation text. Samples are selected from the EARS test set to represent wide variation in references.
