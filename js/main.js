@@ -68,11 +68,11 @@ function buildTableLayout(samples) {
         <td><audio controls preload="none" style="width:100%;"><source src="${xttsv2Audio}" type="audio/flac"></audio></td>
       </tr>
       <tr>
-        <td colspan="6" class="text-start p-3">
-          <small class="text-muted transcript-text">
+        <td colspan="6">
+          <p class="text-muted transcript-text mb-0">
             <strong>Reference:</strong> ${refTranscript}<br>
             <strong>Target:</strong> ${tgtTranscript}
-          </small>
+          </p>
         </td>
       </tr>
     `;
@@ -148,11 +148,11 @@ function buildScrollingLayout(samples) {
             </audio>
           </span>
         </div>
-        <div class="card-footer text-start">
-          <small class="text-muted transcript-text">
+        <div>
+          <p class="text-muted transcript-text mb-0">
             <strong>Reference:</strong> ${refTranscript}<br>
             <strong>Target:</strong> ${tgtTranscript}
-          </small>
+          </p>
         </div>
       </div>
     `;

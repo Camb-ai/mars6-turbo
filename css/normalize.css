@@ -51,7 +51,9 @@ summary {
  * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
  */
 
-audio,
+audio{
+  max-width: 150px;
+}
 canvas,
 progress,
 video {
