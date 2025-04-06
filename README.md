@@ -2,6 +2,8 @@
 
 **MARS6** is a compact autoregressive TTS system based on a hierarchical neural audio codec. It uses a two-stage decoder to predict coarse-to-fine tokens at only **12 Hz**, leading to fast inference while preserving high audio quality and speaker similarity. MARS6 achieves robust zero-shot voice cloning and expressive synthesis even on challenging in-the-wild references. This repository provides a lightweight implementation for inference using our public turbo checkpoints.
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Camb-ai/mars6-turbo/blob/master/MARS6_turbo_inference_demo.ipynb)
+
 ---
 
 ## Model Architecture
