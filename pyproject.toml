@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "mars6"
-version = "0.1.0"
+version = "0.0.1"
 description = "MARS6: A Small & Robust Hierarchical-Codec Text-to-Speech Model"
 authors = [
     { name = "Baas, Matthew and Scholtz, Pieter and Mehta, Arnav and Dyson, Elliott and Prakash, Akshat and Kamper, Herman" }
@@ -20,4 +20,6 @@ dependencies = [
 mars6 = "mars6.main:cli"
 
 [tool.setuptools.packages.find]
-where = ["mars6"]
+where = ["."] 
+include = ["mars6*"]  # Added to explicitly include mars6 package
+
