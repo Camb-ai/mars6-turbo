@@ -12,14 +12,8 @@ authors = [
 readme = "README.md"
 requires-python = ">=3.8"
 dependencies = [
-    "torch",
-    "torchaudio",
-    "numpy",
-    "librosa",
-    "transformers",
     "snac",
-    "msclap",
-    "safetensors"
+    "msclap @ git+https://github.com/microsoft/CLAP.git"
 ]
 
 [project.scripts]
