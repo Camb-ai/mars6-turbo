@@ -30,20 +30,32 @@ This section outlines how to install and run MARS6 for inference. You can either
 
 ### Installation
 
-1. **Clone this repo**:
+You can install MARS6 in two ways:
 
+#### Option 1: Direct Installation from GitHub
+
+```bash
+uv pip install git+https://github.com/Camb-ai/mars6-turbo.git
+```
+or using pip:
+```bash
+pip install git+https://github.com/Camb-ai/mars6-turbo.git
+```
+
+#### Option 2: Local Development Installation
+
+1. **Clone this repo**:
    ```bash
    git clone https://github.com/Camb-ai/mars6-turbo.git
    cd mars6
    ```
 
-2. **Install the package**:
-
+2. **Install in editable mode**:
    ```bash
    pip install -e .
    ```
 
-This will automatically install all required dependencies. The package requires Python 3.8+.
+Both methods will automatically install all required dependencies. The package requires Python 3.8+.
 
 ### Usage
 
