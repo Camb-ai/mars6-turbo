@@ -9,8 +9,8 @@ import torch
 from torch import Tensor
 import torch.nn as nn
 import torch.nn.functional as F
-from mars6_turbo.nn_future import SinePositionalEmbedding, FNNSwiGLU, TransformerDecoder, RotatingBufferCache
-from mars6_turbo.utils import length_to_mask, fast_categorical_sample, top_k_top_p_filtering
+from mars6.nn_future import SinePositionalEmbedding, FNNSwiGLU, TransformerDecoder, RotatingBufferCache
+from mars6.utils import length_to_mask, fast_categorical_sample, top_k_top_p_filtering
 from dataclasses import dataclass
 import logging
 from typing import Optional

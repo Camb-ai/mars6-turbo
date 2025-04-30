@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mars6"
+version = "0.1.0"
+description = "MARS6: A Small & Robust Hierarchical-Codec Text-to-Speech Model"
+authors = [
+    { name = "Baas, Matthew and Scholtz, Pieter and Mehta, Arnav and Dyson, Elliott and Prakash, Akshat and Kamper, Herman" }
+]
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "torch",
+    "torchaudio",
+    "numpy",
+    "librosa",
+    "transformers",
+    "snac",
+    "msclap",
+    "safetensors"
+]
+
+[project.scripts]
+mars6 = "mars6.main:cli"
+
+[tool.setuptools.packages.find]
+where = ["mars6"]

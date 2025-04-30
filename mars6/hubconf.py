@@ -14,8 +14,8 @@ import os
 import torch
 
 # Local MARS6 imports
-from mars6_turbo.ar_model import Mars6_Turbo, SNACTokenizerInfo
-from mars6_turbo.minbpe.regex import RegexTokenizer
+from mars6.ar_model import Mars6_Turbo, SNACTokenizerInfo
+from mars6.minbpe.regex import RegexTokenizer
 
 ########################################################################
 # Checkpoint & tokenizer URLs

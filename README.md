@@ -34,24 +34,36 @@ This section outlines how to install and run MARS6 for inference. You can either
 
    ```bash
    git clone https://github.com/Camb-ai/mars6-turbo.git
-   cd mars6-turbo
+   cd mars6
    ```
 
-2. **Install required dependencies**:
+2. **Install the package**:
 
    ```bash
-   pip install snac msclap ipykernel iprogress
+   pip install -e .
    ```
-   (Make sure you also have a modern version of Python, e.g. 3.9+. Best practice to use a conda environment or a python venv)
 
-### Model Inference
+This will automatically install all required dependencies. The package requires Python 3.8+.
 
-Use [`inference.py`](inference.py) for direct usage:
-```shell
-python inference.py --audio "referencepath.wav" --save_path "outputpath.wav" --text "Text we wish to output. All right here!" --transcript "Transcript of the reference. For if you wish to deep clone"
+### Usage
+
+After installation, you can use MARS6 in two ways:
+
+#### Command Line Interface
+
+```bash
+mars6 --audio "reference.wav" --save_path "output.wav" --text "Text to synthesize" --transcript "Optional: transcript of reference audio for deep clone"
 ```
-OR
-[`MARS6_turbo_inference_demo.ipynb`](MARS6_turbo_inference_demo.ipynb) for a jupyter notebook.
+
+#### Python Package
+
+```python
+from mars6 import inference
+
+# See test.py for complete usage example
+```
+
+For interactive usage, you can also use the [`MARS6_turbo_inference_demo.ipynb`](MARS6_turbo_inference_demo.ipynb) notebook.
 
 ---
 
@@ -86,15 +98,15 @@ The preferred way to contribute to our repo is to fork the [master repository](h
 
 We're an ambitious team, globally distributed, with a singular aim of making everyone's voice count. At CAMB.AI, we're a research team of Interspeech-published, Carnegie Mellon, ex-Siri engineers and we're looking for you to join our team.
 
-We're actively hiring; please drop us an email at ack@camb.ai if you're interested. Visit our [careers page](https://www.camb.ai/careers) for more info.
-
+We're actively hiring; please drop us an email at <ack@camb.ai> if you're interested. Visit our [careers page](https://www.camb.ai/careers) for more info.
 
 ## Community
 
 Join CAMB.AI community on [Forum](https://github.com/Camb-ai/MARS6-Turbo/discussions) and
 [Discord](https://discord.gg/FFQNCSKSXX) to share any suggestions, feedback, or questions with our team.
 
-## Support Camb.ai on Ko-fi ❤️!
+## Support Camb.ai on Ko-fi ❤️
+
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/cambai)
 
 ## Citation

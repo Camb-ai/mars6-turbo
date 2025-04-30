@@ -1,0 +1,6 @@
+include README.md
+include LICENSE
+include assets/*
+recursive-include mars6 *.pt
+recursive-include mars6 *.model
+recursive-include mars6/minbpe *.py
