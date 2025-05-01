@@ -11,19 +11,7 @@ from mars6.utils import default_config
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 dtype = torch.half if device == 'cuda' else torch.float
 
-# Configuration
-# config = {
-#     "sr": 24000,
-#     "ras_K": 10,
-#     "ras_t_r": 0.09,
-#     "top_p": 0.2,
-#     "sil_trim_db": 33,
-#     "backoff_top_p_increment": 0.2,
-#     "chars_per_second_upper_bound": 32,
-#     "min_valid_audio_volume": -52,
-#     "prefix": "48000",
-#     "deep_clone_mode": "per-chunk"
-# }
+
 
 # 1. Load model and tokenizer
 model, texttok = torch.hub.load(
@@ -46,7 +34,7 @@ snac_codec = SNAC.from_pretrained("hubertsiuzdak/snac_24khz").eval().to(device=d
 
 # 4. Run inference
 input_audio = "assets/example.wav"  # Using the example audio file
-input_text = "Hello, this is a test of the Mars6 TTS system."
+input_text = "Hello, this is a test of the Mars6 TTS end to end voice cloning system."
 
 out_wav, out_sr, inference_time = inference.make_predictions(
     model=model,
