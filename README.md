@@ -30,28 +30,68 @@ This section outlines how to install and run MARS6 for inference. You can either
 
 ### Installation
 
-1. **Clone this repo**:
+You can install MARS6 in two ways:
 
+#### Option 1: Direct Installation from GitHub
+
+```bash
+uv pip install git+https://github.com/Camb-ai/mars6-turbo.git
+```
+or using pip:
+```bash
+pip install git+https://github.com/Camb-ai/mars6-turbo.git
+```
+
+#### Option 2: Local Development Installation
+
+1. **Clone this repo**:
    ```bash
    git clone https://github.com/Camb-ai/mars6-turbo.git
-   cd mars6-turbo
+   cd mars6
    ```
 
-2. **Install required dependencies**:
-
+2. **Install in editable mode**:
    ```bash
-   pip install snac msclap ipykernel iprogress
+   pip install -e .
    ```
-   (Make sure you also have a modern version of Python, e.g. 3.9+. Best practice to use a conda environment or a python venv)
 
-### Model Inference
+Both methods will automatically install all required dependencies. The package requires Python 3.8+.
 
-Use [`inference.py`](inference.py) for direct usage:
-```shell
-python inference.py --audio "referencepath.wav" --save_path "outputpath.wav" --text "Text we wish to output. All right here!" --transcript "Transcript of the reference. For if you wish to deep clone"
+### Usage
+
+After installation, you can use MARS6 in two ways:
+
+#### Command Line Interface
+
+```bash
+# Basic usage (using an audio file as reference)
+mars6 --audio path/to/reference.wav --text "Hello, this is a test of the Mars6 TTS end to end voice cloning system." --save_path output.wav
+
+# Example using the included sample audio
+# First, download example.wav from the repository's assets folder
+mars6 --audio example.wav --text "Hello, this is a test of the Mars6 TTS end to end voice cloning system." --save_path output.wav
+
+# Advanced usage with deep cloning
+mars6 \
+    --audio assets/example.wav \
+    --text "Hello, this is a test of the Mars6 TTS end to end voice cloning system." \
+    --save_path output.wav \
+    --device cuda \
+    --deep_clone_mode per-chunk \
+    --transcript "Optional: provide the transcript of the reference audio for better cloning"
 ```
-OR
-[`MARS6_turbo_inference_demo.ipynb`](MARS6_turbo_inference_demo.ipynb) for a jupyter notebook.
+
+The CLI tool will use CUDA if available, otherwise fall back to CPU.
+
+#### Python Package
+
+```python
+from mars6 import inference
+
+# See example.py for complete usage example
+```
+
+For interactive usage, you can also use the [`MARS6_turbo_inference_demo.ipynb`](MARS6_turbo_inference_demo.ipynb) notebook.
 
 ---
 
@@ -86,15 +126,15 @@ The preferred way to contribute to our repo is to fork the [master repository](h
 
 We're an ambitious team, globally distributed, with a singular aim of making everyone's voice count. At CAMB.AI, we're a research team of Interspeech-published, Carnegie Mellon, ex-Siri engineers and we're looking for you to join our team.
 
-We're actively hiring; please drop us an email at ack@camb.ai if you're interested. Visit our [careers page](https://www.camb.ai/careers) for more info.
-
+We're actively hiring; please drop us an email at <ack@camb.ai> if you're interested. Visit our [careers page](https://www.camb.ai/careers) for more info.
 
 ## Community
 
 Join CAMB.AI community on [Forum](https://github.com/Camb-ai/MARS6-Turbo/discussions) and
 [Discord](https://discord.gg/FFQNCSKSXX) to share any suggestions, feedback, or questions with our team.
 
-## Support Camb.ai on Ko-fi ❤️!
+## Support Camb.ai on Ko-fi ❤️
+
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/cambai)
 
 ## Citation

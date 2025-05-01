@@ -158,3 +158,16 @@ class RegexSplitter(SentenceSplitter):
 
     def __exit__(self, exc_type, exc_val, exc_tb):
         pass
+
+default_config = {
+    "sr": 24000,
+    "ras_K": 10,
+    "ras_t_r": 0.09,
+    "top_p": 0.2,
+    "sil_trim_db": 33,
+    "backoff_top_p_increment": 0.2,
+    "chars_per_second_upper_bound": 32,
+    "min_valid_audio_volume": -52,
+    "prefix": "48000",
+    "deep_clone_mode": "per-chunk"
+}
