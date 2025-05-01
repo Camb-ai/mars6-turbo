@@ -88,7 +88,7 @@ The CLI tool will use CUDA if available, otherwise fall back to CPU.
 ```python
 from mars6 import inference
 
-# See test.py for complete usage example
+# See example.py for complete usage example
 ```
 
 For interactive usage, you can also use the [`MARS6_turbo_inference_demo.ipynb`](MARS6_turbo_inference_demo.ipynb) notebook.
