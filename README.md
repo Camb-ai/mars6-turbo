@@ -64,8 +64,24 @@ After installation, you can use MARS6 in two ways:
 #### Command Line Interface
 
 ```bash
-mars6 --audio "reference.wav" --save_path "output.wav" --text "Text to synthesize" --transcript "Optional: transcript of reference audio for deep clone"
+# Basic usage (using an audio file as reference)
+mars6 --audio path/to/reference.wav --text "Hello, this is a test of the Mars6 TTS end to end voice cloning system." --save_path output.wav
+
+# Example using the included sample audio
+# First, download example.wav from the repository's assets folder
+mars6 --audio example.wav --text "Hello, this is a test of the Mars6 TTS end to end voice cloning system." --save_path output.wav
+
+# Advanced usage with deep cloning
+mars6 \
+    --audio assets/example.wav \
+    --text "Hello, this is a test of the Mars6 TTS end to end voice cloning system." \
+    --save_path output.wav \
+    --device cuda \
+    --deep_clone_mode per-chunk \
+    --transcript "Optional: provide the transcript of the reference audio for better cloning"
 ```
+
+The CLI tool will use CUDA if available, otherwise fall back to CPU.
 
 #### Python Package
 

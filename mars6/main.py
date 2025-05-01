@@ -52,8 +52,10 @@ def cli():
     }
 
     # 1. Load model and tokenizer
+    import importlib.resources
+    package_path = importlib.resources.files("mars6")
     model, texttok = torch.hub.load(
-        repo_or_dir="./",#"Camb-ai/mars6-turbo",
+        repo_or_dir=str(package_path),
         model="mars6_turbo",
         ckpt_format='pt',
         device=device,
